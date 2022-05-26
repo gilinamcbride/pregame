@@ -1,7 +1,23 @@
 //global variables needed:
 var citySearchArray = [];
+var formEl;
+var formInputEl;
+var breweryListEl = document.querySelector("#brews-list");
 
 // TODO: function to capture form input on click
+var submitForm = function (event) {
+  event.preventDefault();
+  var cityInput = formInputEl.value.trim();
+  var city = cityInput.toLowerCase();
+  if (city) {
+    getBreweryArray(city);
+    //   getConcertArray(city);
+    saveCitySearch(cityInput);
+  } else {
+    alert("Please enter a city name.");
+  }
+};
+// formEl.addEventListener("submit", submitForm);
 
 // TODO: function to use brew API /fetch /catch with information from search function
 
@@ -15,6 +31,7 @@ var getBreweryArray = function (location) {
       if (response.ok) {
         response.json().then(function (breweryData) {
           console.log(breweryData);
+          breweryDisplay(breweryData);
         });
       } else {
         console.log("No breweries found");
@@ -49,6 +66,31 @@ var getConcertArray = function (location) {
 // getConcertArray("nashville");
 
 // TODO: function to display brewery information - name of brewery/adress/website
+
+var breweryDisplay = function (breweryArray) {
+  for (var i = 0; i < breweryArray.length; i++) {
+    var name = breweryArray[i].name;
+    var address =
+      breweryArray[i].street +
+      " " +
+      breweryArray[i].city +
+      ", " +
+      breweryArray[i].state +
+      " " +
+      breweryArray[i].postal_code;
+    var url = breweryArray[i].website_url;
+
+    var breweryLinkEl = document.createElement("a");
+    breweryLinkEl.setAttribute("href", url);
+
+    var titleEl = document.createElement("button");
+    titleEl.innerHTML = name + "<br/>" + address;
+
+    breweryLinkEl.appendChild(titleEl);
+
+    breweryListEl.appendChild(breweryLinkEl);
+  }
+};
 
 // TODO: function to display concert information
 
