@@ -24,8 +24,12 @@
       </div>
   
       <div id="nav-sec-2">
-        <textarea name="" id="search-bar" placeholder="Enter a location"> </textarea>
-        <button class="pill" id="submit-btn">Search</button>
+        <form action="">
+          <input name="" id="search-bar" placeholder="Enter a location" type="text">
+          <button class="pill" id="submit-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
       </div>
     </nav>
 
@@ -45,7 +49,21 @@
         <span id="location-brews"></span>
 
         
-        <a id="result-ink" href="https://gizmobrewworks.com/">
+        <a class="results" id="result-ink" href="https://gizmobrewworks.com/">
+          <button id="result">
+          Gizmo Brewworks
+          <span>(4.7mi)</span> 
+            </button>
+        </a>
+
+        <a class="results" id="result-ink" href="https://gizmobrewworks.com/">
+          <button id="result">
+          Gizmo Brewworks
+          <span>(4.7mi)</span> 
+            </button>
+        </a>
+        
+        <a class="results" id="result-ink" href="https://gizmobrewworks.com/">
           <button id="result">
           Gizmo Brewworks
           <span>(4.7mi)</span> 
@@ -56,7 +74,7 @@
 
       </div>
 
-      <div id="beats-list">
+      <div id="beats-list" class="hidde">
 
         <h2>Showing Entertainment in:</h2>
         <span id="location-beats"></span>
