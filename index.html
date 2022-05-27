@@ -4,10 +4,79 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project 1</title>
+    <title>Beats & Brews</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
+
   <body>
+    <!-- section contains the name of the application and the icon/profile (optional) -->
+    <header class="header" id="header">
+      <h1>Beats & Brews</h1>
+    </header>
+
+    <!-- section for changing between breweries or events and searching the area -->
+    <nav class="search-sec" id="search-sec">
+      <div id="nav-sec-1">
+        <button class="pill" id="brews-btn">Brews</button>
+        <button class="pill" id="beats-btn">Beats</button>
+      </div>
+
+      <div id="nav-sec-2">
+        <form action="">
+          <input
+            name=""
+            id="search-bar"
+            placeholder="Enter a location"
+            type="text"
+          />
+          <button class="pill" id="submit-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- this section if for the map -->
+    <!-- <map name="">
+
+
+    </map> -->
+
+    <!-- main content (one of the methods for displaying results) -->
+
+    <main id="search-results">
+      <div id="brews-list">
+        <h2>Showing Breweries in:</h2>
+        <span id="location-brews"></span>
+
+        <a class="results" id="result-ink" href="https://gizmobrewworks.com/">
+          <button id="result">
+            Gizmo Brewworks
+            <span>(4.7mi)</span>
+          </button>
+        </a>
+
+        <a class="results" id="result-ink" href="https://gizmobrewworks.com/">
+          <button id="result">
+            Gizmo Brewworks
+            <span>(4.7mi)</span>
+          </button>
+        </a>
+
+        <a class="results" id="result-ink" href="https://gizmobrewworks.com/">
+          <button id="result">
+            Gizmo Brewworks
+            <span>(4.7mi)</span>
+          </button>
+        </a>
+      </div>
+
+      <div id="beats-list" class="hidde">
+        <h2>Showing Entertainment in:</h2>
+        <span id="location-beats"></span>
+      </div>
+    </main>
+
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
