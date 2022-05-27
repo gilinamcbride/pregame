@@ -44,16 +44,14 @@ var getBreweryArray = function (location) {
 getBreweryArray("los angeles");
 
 // TODO: function to use concert API /fetch /catch with information from search function
-var getConcertArray = function (location) {
-  var concertApi =
-    "https://api.songkick.com/api/3.0/search/locations.json?query=" +
-    location +
-    "&apikey={your_api_key}";
+var getSecondArray = function (location) {
+  var concertApi = "http://www.boredapi.com/api/activity/";
   fetch(concertApi)
     .then(function (response) {
       if (response.ok) {
-        response.json().then(function (concertData) {
-          console.log(concertData);
+        response.json().then(function (data) {
+          console.log(data);
+          //   eventsDisplay(data);
         });
       } else {
         console.log("No concerts found");
@@ -63,7 +61,7 @@ var getConcertArray = function (location) {
       console.log("Unable to connect to Beats & Brews");
     });
 };
-// getConcertArray("nashville");
+// getSecondArray();
 
 // TODO: function to display brewery information - name of brewery/adress/website
 
@@ -104,7 +102,7 @@ function saveCitySearch(cityName) {
   localStorage.setItem("city", JSON.stringify(citySearchArray));
 }
 //remove this call when placing it in correct location
-saveCitySearch("charlotte");
+// saveCitySearch("charlotte");
 
 // TODO: retrieve recent searches
 
