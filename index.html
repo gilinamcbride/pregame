@@ -22,9 +22,10 @@
       </div>
 
       <div id="nav-sec-2">
-        <form action="">
+        <form id="form">
+          <div id="form-error"></div>
           <input
-            name=""
+            name="city"
             id="search-bar"
             placeholder="Enter a location"
             type="text"
@@ -33,50 +34,46 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
+        <div id="fetch-error"></div>
+      </div>
+      <div>
+        <h2>Recent Search</h2>
+        <div id="recent-search"></div>
+        <button id="clear-search" type="submit">Clear History</button>
       </div>
     </nav>
 
-    <!-- this section if for the map -->
+    <!-- this section is for the map if we do it -->
     <!-- <map name="">
 
 
     </map> -->
 
-    <!-- main content (one of the methods for displaying results) -->
+    <!-- main content (for displaying results) -->
 
     <main id="search-results">
       <div id="brews-list">
         <h2>Showing Breweries in:</h2>
-        <span id="location-brews"></span>
+        <span id="location-brew"></span>
+        <div id="brew-list-btns"></div>
 
+        <!-- Need to remove hardcoded buttons -->
         <a class="results" id="result-ink" href="https://gizmobrewworks.com/">
           <button id="result">
-            Gizmo Brewworks
-            <span>(4.7mi)</span>
-          </button>
-        </a>
-
-        <a class="results" id="result-ink" href="https://gizmobrewworks.com/">
-          <button id="result">
-            Gizmo Brewworks
-            <span>(4.7mi)</span>
-          </button>
-        </a>
-
-        <a class="results" id="result-ink" href="https://gizmobrewworks.com/">
-          <button id="result">
-            Gizmo Brewworks
+            EXAMPLE BUTTON
             <span>(4.7mi)</span>
           </button>
         </a>
       </div>
 
-      <div id="beats-list" class="hidde">
+      <div id="beats-list" class="hidden">
         <h2>Showing Entertainment in:</h2>
         <span id="location-beats"></span>
+        <div id="beats-list-btns"></div>
       </div>
     </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
