@@ -9,6 +9,7 @@ var beatsCityTitleEl = document.querySelector("#location-beats");
 var recentSearchEl = document.querySelector("#recent-search");
 var btn;
 var clearSearchBtn = document.querySelector("#clear-search");
+var fetchErrorEl = document.querySelector("#fetch-error");
 
 // function to get the form value on submit and send it to the next functions
 // if no city is entered it tells user to enter a city and returns out of function
@@ -46,7 +47,10 @@ var getBreweryArray = function (location) {
           breweryDisplay(breweryData);
         });
       } else {
-        console.log("No breweries available in this area.");
+        var errorAlert = document.createElement("p");
+        errorAlert.textContent = "No breweries available in this area.";
+        errorAlert.className = "form-error";
+        fetchErrorEl.appendChild(errorAlert);
         return;
       }
     })
@@ -69,7 +73,11 @@ var getEventArray = function (location) {
           eventsDisplay(eventData);
         });
       } else {
-        console.log("No events found");
+        var errorAlert = document.createElement("p");
+        errorAlert.textContent = "No events found in this area.";
+        errorAlert.className = "form-error";
+        fetchErrorEl.appendChild(errorAlert);
+        return;
       }
     })
     .catch(function (error) {
@@ -88,9 +96,12 @@ var breweryDisplay = function (breweryArray) {
   }
   for (var i = 0; i < breweryArray.length; i++) {
     var name = breweryArray[i].name;
+    if (breweryArray[i].street !== null) {
+      var street = breweryArray[i].street;
+    } else {
+      var street = "";
+    }
     var address =
-      breweryArray[i].street +
-      " " +
       breweryArray[i].city +
       ", " +
       breweryArray[i].state +
@@ -104,7 +115,7 @@ var breweryDisplay = function (breweryArray) {
 
     var titleEl = document.createElement("button");
     titleEl.className = "results";
-    titleEl.innerHTML = name + "<br/>" + address;
+    titleEl.innerHTML = name + "<br/>" + street + "<br/>" + address;
 
     breweryLinkEl.appendChild(titleEl);
 
@@ -196,10 +207,10 @@ recentSearchEl.addEventListener("click", savedHistoryClick);
 getRecentSearch();
 
 //TODO: event listener to clear recent search buttons and localStorage
-// clearSearchBtn.addEventListener("click", function () {
-//   localStorage.clear();
-//   recentSearchEl.innerHTML = "";
-// });
+clearSearchBtn.addEventListener("click", function () {
+  localStorage.clear();
+  recentSearchEl.innerHTML = "";
+});
 
 // TODO: Solve empty array problem and missing events data problem
 //   if (breweryArray === []) {
