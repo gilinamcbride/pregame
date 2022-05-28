@@ -24,6 +24,7 @@ var submitForm = function (event) {
     getEventArray(city);
     saveCitySearch(cityInput);
   } else {
+    formErrorEl.textContent = "";
     var errorAlert = document.createElement("p");
     errorAlert.textContent = "Please enter a city name.";
     errorAlert.className = "form-error";
@@ -91,7 +92,7 @@ var breweryDisplay = function (breweryArray) {
   brewCityTitleEl.textContent = "";
 
   var title = (brewCityTitleEl.textContent = formInputEl.value.trim());
-  if (!title) {
+  if (title === null || title === "") {
     brewCityTitleEl.textContent = btn.getAttribute("data-name");
   }
   for (var i = 0; i < breweryArray.length; i++) {
@@ -203,22 +204,17 @@ function savedHistoryClick(e) {
 // event listener for click on recent search button to start saveHistoryClick function
 recentSearchEl.addEventListener("click", savedHistoryClick);
 
-// call function getRecentSearch at the bottom of page so it displays recent search info always
-getRecentSearch();
-
-//TODO: event listener to clear recent search buttons and localStorage
+// event listener to clear recent search buttons and localStorage
 clearSearchBtn.addEventListener("click", function () {
   localStorage.clear();
   recentSearchEl.innerHTML = "";
+  location.reload();
 });
+// call function getRecentSearch at the bottom of page so it displays recent search info always
+getRecentSearch();
 
-// TODO: Solve empty array problem and missing events data problem
-//   if (breweryArray === []) {
-//     var noBreweries = document.createElement("p");
-//     noBreweries.textContent = "There are no breweries found in this area.";
-//     breweryListEl.appendChild(noBreweries);
-//     console.log(noBreweries);
-//   }
+// TODO: Solve empty array problem and missing events data problem - smaller towns?
 // if there is no .events on the object
+// if brewery api returns empty array
 
-// TODO: replace console.log errors with something else
+// TODO: replace console.log errors with something else - after the .catch function
