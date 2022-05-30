@@ -9,6 +9,7 @@ var beatsCityTitleEl = document.querySelector("#location-beats");
 var recentSearchEl = document.querySelector("#recent-search");
 var btn;
 var clearSearchBtn = document.querySelector("#clear-search");
+var fetchErrorEl = document.querySelector("#fetch-error");
 
 // function to get the form value on submit and send it to the next functions
 // if no city is entered it tells user to enter a city and returns out of function
@@ -19,10 +20,12 @@ var submitForm = function (event) {
   var formErrorEl = document.querySelector("#form-error");
   if (city) {
     formErrorEl.textContent = "";
+    fetchErrorEl.textContent = "";
     getBreweryArray(city);
     getEventArray(city);
     saveCitySearch(cityInput);
   } else {
+    formErrorEl.textContent = "";
     var errorAlert = document.createElement("p");
     errorAlert.textContent = "Please enter a city name.";
     errorAlert.className = "form-error";
@@ -46,12 +49,22 @@ var getBreweryArray = function (location) {
           breweryDisplay(breweryData);
         });
       } else {
-        console.log("No breweries available in this area.");
+        fetchErrorEl.textContent = "";
+        var errorAlert = document.createElement("p");
+        errorAlert.textContent = "No breweries available in this area.";
+        errorAlert.className = "form-error";
+        fetchErrorEl.appendChild(errorAlert);
         return;
       }
     })
     .catch(function (error) {
-      console.log("Unable to connect to Beats & Brews");
+      fetchErrorEl.textContent = "";
+      var errorAlert = document.createElement("p");
+      errorAlert.textContent =
+        "Unable to connect to Pregame. Please try again.";
+      errorAlert.className = "form-error";
+      fetchErrorEl.appendChild(errorAlert);
+      return;
     });
 };
 
@@ -69,11 +82,22 @@ var getEventArray = function (location) {
           eventsDisplay(eventData);
         });
       } else {
-        console.log("No events found");
+        fetchErrorEl.textContent = "";
+        var errorAlert = document.createElement("p");
+        errorAlert.textContent = "No events found in this area.";
+        errorAlert.className = "form-error";
+        fetchErrorEl.appendChild(errorAlert);
+        return;
       }
     })
     .catch(function (error) {
-      console.log("Unable to connect to Beats & Brews");
+      fetchErrorEl.textContent = "";
+      var errorAlert = document.createElement("p");
+      errorAlert.textContent =
+        "Unable to connect to Pregame. Please try again.";
+      errorAlert.className = "form-error";
+      fetchErrorEl.appendChild(errorAlert);
+      return;
     });
 };
 
@@ -83,14 +107,17 @@ var breweryDisplay = function (breweryArray) {
   brewCityTitleEl.textContent = "";
 
   var title = (brewCityTitleEl.textContent = formInputEl.value.trim());
-  if (!title) {
+  if (title === null || title === "") {
     brewCityTitleEl.textContent = btn.getAttribute("data-name");
   }
   for (var i = 0; i < breweryArray.length; i++) {
     var name = breweryArray[i].name;
+    if (breweryArray[i].street !== null) {
+      var street = breweryArray[i].street;
+    } else {
+      var street = "";
+    }
     var address =
-      breweryArray[i].street +
-      " " +
       breweryArray[i].city +
       ", " +
       breweryArray[i].state +
@@ -104,7 +131,7 @@ var breweryDisplay = function (breweryArray) {
 
     var titleEl = document.createElement("button");
     titleEl.className = "results";
-    titleEl.innerHTML = name + "<br/>" + address;
+    titleEl.innerHTML = name + "<br/>" + street + "<br/>" + address;
 
     breweryLinkEl.appendChild(titleEl);
 
@@ -192,22 +219,11 @@ function savedHistoryClick(e) {
 // event listener for click on recent search button to start saveHistoryClick function
 recentSearchEl.addEventListener("click", savedHistoryClick);
 
+// event listener to clear recent search buttons and localStorage
+clearSearchBtn.addEventListener("click", function () {
+  localStorage.clear();
+  recentSearchEl.innerHTML = "";
+  location.reload();
+});
 // call function getRecentSearch at the bottom of page so it displays recent search info always
 getRecentSearch();
-
-//TODO: event listener to clear recent search buttons and localStorage
-// clearSearchBtn.addEventListener("click", function () {
-//   localStorage.clear();
-//   recentSearchEl.innerHTML = "";
-// });
-
-// TODO: Solve empty array problem and missing events data problem
-//   if (breweryArray === []) {
-//     var noBreweries = document.createElement("p");
-//     noBreweries.textContent = "There are no breweries found in this area.";
-//     breweryListEl.appendChild(noBreweries);
-//     console.log(noBreweries);
-//   }
-// if there is no .events on the object
-
-// TODO: replace console.log errors with something else
