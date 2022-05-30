@@ -6,12 +6,12 @@
 }
 
 /* @media screen and (max-width: 575px) { */
-  body {
+  /* body {
     background: rgb(42, 41, 41);
     display: flex;
-  }
+  } */
 
-  header {
+  /* header {
     display: flex;
     justify-content: space-around;
     font-size: 1.5rem;
@@ -24,9 +24,9 @@
       display: inline;
       flex-direction: column;
       justify-content: center;
-  }
+  } */
 
-  .hidden {
+  /* .hidden {
     display: none;
   }
 
@@ -52,17 +52,13 @@
   #nav-sec-1 button:active {
   }
 
-  /* #nav-sec-1 button:
-    {
-
-    } */
 
   #nav-sec-2 {
     align-items: center;
     justify-content: space-around;
     display: flex;
-  }
-
+  } */
+/* 
   #nav-sec-2 input {
     height: 3rem;
     width: 15rem;
@@ -112,5 +108,5 @@
   }
   #result-ink span {
     color: gold;
-  }
-/* } */
+  } */
+
