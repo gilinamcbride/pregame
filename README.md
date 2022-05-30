@@ -22,15 +22,6 @@ This application was built with the help of the following languages and APIs:
 - [Open Brewery DB](https://www.openbrewerydb.org/)
 - [TicketMaster API](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#anchor_find)
 
-## Credits
-
-Thank you to everyone on the team for your contributions!
-
-- [Gilina](https://github.com/gilinamcbride)
-- [Donnie](https://github.com/Atlas075)
-- [Drew](https://github.com/DrewMcKinney23)
-- [Caren](https://github.com/cammeer)
-
 ## Requirements
 
 **_User Story_**
@@ -53,6 +44,14 @@ Thank you to everyone on the team for your contributions!
 - **THEN** the city is saved in the recent search
 - **WHEN I** click clear history
 - **THEN** all of the search history is cleared from the page
+
+**_Future Iterations_**
+Moving forward future iterations of the application would include:
+
+- A map of the searched city that had pins of the brewery locations and venue locations searched
+- The search would include more than just major US cities - it would also render breweries and events in smaller towns and global cities
+- More search options including wineries and local bars for those who don't enjoy beer
+- More specified search options including searching by type of event you want to attend, or type/brand of beer
 
 **_Presentation_**
 
@@ -79,3 +78,12 @@ Thank you to everyone on the team for your contributions!
 - **Demo:** Show your stuff!
 - **Directions** for future development.
 - **Links** to the deployed application and the GitHub repository.
+
+## Credits
+
+Thank you to everyone on the team for your contributions!
+
+- [Gilina](https://github.com/gilinamcbride)
+- [Donnie](https://github.com/Atlas075)
+- [Drew](https://github.com/DrewMcKinney23)
+- [Caren](https://github.com/cammeer)
