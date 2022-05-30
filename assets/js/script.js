@@ -20,6 +20,7 @@ var submitForm = function (event) {
   var formErrorEl = document.querySelector("#form-error");
   if (city) {
     formErrorEl.textContent = "";
+    fetchErrorEl.textContent = "";
     getBreweryArray(city);
     getEventArray(city);
     saveCitySearch(cityInput);
@@ -48,6 +49,7 @@ var getBreweryArray = function (location) {
           breweryDisplay(breweryData);
         });
       } else {
+        fetchErrorEl.textContent = "";
         var errorAlert = document.createElement("p");
         errorAlert.textContent = "No breweries available in this area.";
         errorAlert.className = "form-error";
@@ -56,7 +58,13 @@ var getBreweryArray = function (location) {
       }
     })
     .catch(function (error) {
-      console.log("Unable to connect to Beats & Brews");
+      fetchErrorEl.textContent = "";
+      var errorAlert = document.createElement("p");
+      errorAlert.textContent =
+        "Unable to connect to Pregame. Please try again.";
+      errorAlert.className = "form-error";
+      fetchErrorEl.appendChild(errorAlert);
+      return;
     });
 };
 
@@ -74,6 +82,7 @@ var getEventArray = function (location) {
           eventsDisplay(eventData);
         });
       } else {
+        fetchErrorEl.textContent = "";
         var errorAlert = document.createElement("p");
         errorAlert.textContent = "No events found in this area.";
         errorAlert.className = "form-error";
@@ -82,7 +91,13 @@ var getEventArray = function (location) {
       }
     })
     .catch(function (error) {
-      console.log("Unable to connect to Beats & Brews");
+      fetchErrorEl.textContent = "";
+      var errorAlert = document.createElement("p");
+      errorAlert.textContent =
+        "Unable to connect to Pregame. Please try again.";
+      errorAlert.className = "form-error";
+      fetchErrorEl.appendChild(errorAlert);
+      return;
     });
 };
 
@@ -212,9 +227,3 @@ clearSearchBtn.addEventListener("click", function () {
 });
 // call function getRecentSearch at the bottom of page so it displays recent search info always
 getRecentSearch();
-
-// TODO: Solve empty array problem and missing events data problem - smaller towns?
-// if there is no .events on the object
-// if brewery api returns empty array
-
-// TODO: replace console.log errors with something else - after the .catch function
