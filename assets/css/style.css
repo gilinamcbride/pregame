@@ -10,7 +10,6 @@
 
 .results {
     border-radius: 10px;
-    background-color: rgb(185, 184, 184);
     color: black;
     padding: 5px;
     margin: 5px;
@@ -19,12 +18,17 @@
 
 .btn-data {
     border-radius: 10px;
-    background-color: rgb(185, 184, 184);
     color: black;
     padding: 5px;
     margin: 5px;
     border: black 1px solid;
 }
+
+.search-area {}
+
+.breweries {}
+
+.events {}
 
 
 /* @media screen and (max-width: 575px) {
