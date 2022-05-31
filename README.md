@@ -6,7 +6,7 @@ Pregame is an application that helps you search for concerts, festivals, sportin
 
 ## :notes: How to use Pregame :beers:
 
-When you arrive at the Pregame homepage, you can simply search for a major US you want to travel to in the search bar and a list of live events and breweries will display on the page.
+When you arrive at the Pregame homepage, you can simply search for a major US city you want to travel to in the search bar and a list of live events and breweries will display on the page.
 
 ## :rocket: Launch
 
