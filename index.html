@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,87 +20,69 @@
            }
        }
    </script> -->
-  </head>
+</head>
 
-  <body class="w-full h-screen bg-yellow-500 p-12">
+<body class="w-full h-screen bg-yellow-500 p-12">
     <!-- section contains the name of the application and the icon/profile (optional) -->
     <header class="header" id="header">
-      <h1
-        class="text-black-500 text-6xl font-bold font-sans italic drop-shadow-lg"
-      >
-        pregame
-      </h1>
-      <br />
-      <br />
-      <p class="text-2xl prose">
-        Discover new events and breweries while traveling in any major U.S.
-        City. <br />
-        Click the submit button below to start exploring.
-      </p>
-      <br />
+        <h1 class="text-black-500 text-6xl font-bold font-sans italic drop-shadow-lg">
+            pregame
+        </h1>
+        <br />
+        <br />
+        <p class="text-2xl prose">
+            Discover new events and breweries while traveling in any major U.S. City. <br /> Enter a city below and click the submit button to start exploring!
+        </p>
+        <br />
     </header>
 
     <!-- form and button -->
     <nav class="search-sec" id="search-sec">
-      <div id="nav-sec-1"></div>
+        <div id="nav-sec-1"></div>
 
-      <div id="nav-sec-2">
-        <form class="" id="form">
-          <div id="form-error"></div>
-          <input
-            name="city"
-            id="search-bar"
-            placeholder="Enter a major U.S. city"
-            type="text"
-          />
-          <button
-            class="hover:bg-amber-100 my-5 px-5 py-2 inline-block bg-black text-white hover:text-black font-medium rounded shadow"
-            id="submit-btn"
-          >
+        <div id="nav-sec-2">
+            <form class="" id="form">
+                <div id="form-error"></div>
+                <input name="city" id="search-bar" placeholder="Enter a major U.S. city" type="text" />
+                <button class="hover:bg-amber-100 my-5 px-5 py-2 inline-block bg-black text-white hover:text-black font-medium rounded shadow" id="submit-btn">
             Submit
           </button>
-        </form>
-        <div id="fetch-error"></div>
-      </div>
-      <div>
-        <h2 class="font-bold italic">Recent City Searches</h2>
-        <div
-          class="my-5 px-5 py-2 inline-block bg-slate text-black font-medium rounded shadow"
-          id="recent-search"
-        ></div>
-        <br />
-        <button
-          class="hover:bg-amber-100 my-5 px-5 py-2 inline-block bg-white text-black font-medium rounded shadow"
-          id="clear-search"
-          type="submit"
-        >
+            </form>
+            <div id="fetch-error"></div>
+        </div>
+        <div>
+            <h2 class="font-bold italic">Recent City Searches</h2>
+            <div class="my-5 px-5 py-2 inline-block bg-slate text-black font-medium rounded shadow" id="recent-search"></div>
+            <br />
+            <button class="hover:bg-amber-100 my-5 px-5 py-2 inline-block bg-white text-black font-medium rounded shadow" id="clear-search" type="submit">
           Clear History
         </button>
-      </div>
+        </div>
     </nav>
 
     <!-- main content (for displaying results) -->
 
     <main id="search-results">
-      <div id="brews-list">
-        <h2 class="font-bold italic">Showing Breweries in:</h2>
+        <div id="brews-list">
+            <h2 class="font-bold italic">Showing Breweries in:</h2>
+            <br />
+            <span class="font-bold italic" id="location-brew"></span>
+            <br />
+            <div class="grid grid-cols-5 gap-4" id="brew-list-btns"></div>
+        </div>
         <br />
-        <span class="font-bold italic" id="location-brew"></span>
         <br />
-        <div class="grid grid-cols-5 gap-4" id="brew-list-btns"></div>
-      </div>
-      <br />
-      <br />
-      <div id="beats-list">
-        <h2 class="font-bold italic">Showing Entertainment in:</h2>
-        <br />
-        <span class="font-bold italic" id="location-beats"></span>
-        <br />
-        <div class="grid grid-cols-5 gap-4" id="beats-list-btns"></div>
-      </div>
+        <div id="beats-list">
+            <h2 class="font-bold italic">Showing Entertainment in:</h2>
+            <br />
+            <span class="font-bold italic" id="location-beats"></span>
+            <br />
+            <div class="grid grid-cols-5 gap-4" id="beats-list-btns"></div>
+        </div>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
-  </body>
+</body>
+
 </html>
