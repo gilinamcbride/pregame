@@ -1,13 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  /* background: rgb(42, 41, 41); */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* background: rgb(42, 41, 41); */
 }
+
+.results {
+    border-radius: 10px;
+    background-color: rgb(185, 184, 184);
+    color: black;
+    padding: 5px;
+    margin: 5px;
+    border: black 1px solid;
+}
+
+.btn-data {
+    border-radius: 10px;
+    background-color: rgb(185, 184, 184);
+    color: black;
+    padding: 5px;
+    margin: 5px;
+    border: black 1px solid;
+}
+
 
 /* @media screen and (max-width: 575px) {
   body {
@@ -49,10 +67,12 @@
   #nav-sec-1 button:active {
   } */
 
+
 /* #nav-sec-1 button:
     {
 
     } */
+
 
 /* #nav-sec-2 {
     align-items: center;
