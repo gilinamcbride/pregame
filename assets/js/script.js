@@ -106,6 +106,7 @@ var breweryDisplay = function (breweryArray) {
   breweryListEl.textContent = "";
   brewCityTitleEl.textContent = "";
 
+  brewCityTitleEl.className = "city-name";
   var title = (brewCityTitleEl.textContent = formInputEl.value.trim());
   if (title === null || title === "") {
     brewCityTitleEl.textContent = btn.getAttribute("data-name");
@@ -130,8 +131,9 @@ var breweryDisplay = function (breweryArray) {
     breweryLinkEl.setAttribute("target", "blank");
 
     var titleEl = document.createElement("button");
-    titleEl.className = "results";
-    titleEl.innerHTML = name + "<br/>" + street + "<br/>" + address;
+    titleEl.className = "brewery-results";
+    titleEl.innerHTML =
+      "<p class='name font-bold'>" + name + "</p>" + street + "<br/>" + address;
 
     breweryLinkEl.appendChild(titleEl);
 
@@ -144,10 +146,12 @@ var eventsDisplay = function (eventsObj) {
   eventsListEl.textContent = "";
   beatsCityTitleEl.textContent = "";
 
+  beatsCityTitleEl.className = "city-name";
   var title = (beatsCityTitleEl.textContent = formInputEl.value.trim());
   if (!title) {
     beatsCityTitleEl.textContent = btn.getAttribute("data-name");
   }
+
   formInputEl.value = "";
 
   var eventsArray = eventsObj._embedded.events;
@@ -163,8 +167,9 @@ var eventsDisplay = function (eventsObj) {
     eventLinkEl.setAttribute("target", "blank");
 
     var titleEl = document.createElement("button");
-    titleEl.className = "results";
-    titleEl.innerHTML = name + "<br/>" + date + "<br/>" + venue;
+    titleEl.className = "events-results";
+    titleEl.innerHTML =
+      "<p class='name font-bold'>" + name + "</p>" + date + "<br/>" + venue;
 
     eventLinkEl.appendChild(titleEl);
 

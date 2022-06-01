@@ -1,135 +1,106 @@
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        /* background: rgb(42, 41, 41); */
-    }
-    
-    .results {
-        border-radius: 10px;
-        color: black;
-        padding: 5px;
-        margin: 5px;
-        border: black 1px solid;
-        background-color: blanchedalmond;
-        width: 100%;
-    }
-    
-    .results:hover {
-        color: white;
-        background-color: rgba(0, 0, 0, 0.395)
-    }
-    
-    .btn-data {
-        border-radius: 10px;
-        color: black;
-        padding: 5px;
-        margin: 5px;
-        border: black 1px solid;
-        width: 100%;
-    }
-    
-    .btn-data:hover {
-        color: white;
-        background-color: rgba(128, 128, 128, 0.529);
-    }
-    /* @media screen and (max-width: 575px) {
-        .main {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-        }
-    } */
-    /* body {
-        background: rgb(42, 41, 41);
-    }
-    header {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 1.5rem;
-        background: gold;
-        border-bottom: white solid 3px;
-    }
-    .hidden {
-        display: none;
-    }
-    #search-sec {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        padding: 1.2rem;
-        height: 20vh;
-    }
-    #nav-sec-1 {}
-    #nav-sec-1 button {
-        height: 3rem;
-        width: 10rem;
-        align-items: center;
-        border-radius: 15px;
-    }
-    #nav-sec-1 button:active {}
-    */
-    /* #nav-sec-1 button:
-    {
+/* tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-    } */
-    /* #nav-sec-2 {
-    align-items: center;
-    justify-content: space-around;
-    display: flex;
-  }
+/* main page */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
 
-  #nav-sec-2 input {
-    height: 3rem;
-    width: 15rem;
-    border-radius: 15px;
-    align-content: center;
-    justify-content: center;
-    padding: 12px 24px;
-    font-size: 1.25rem;
-  }
-  #nav-sec-2 button {
-    height: 3rem;
-    width: 5rem;
-    border-radius: 15px;
-  }
+/* header */
+header {
+  background-image: url(../images/header-background.png);
+  background-size: cover;
+  background-position: center;
+  padding: 150px;
+}
 
-  #search-results {
-    padding: 2rem;
-    height: 100vh;
-  }
+header h1 {
+  font-family: "Rock Salt", cursive;
+  font-size: 70px;
+  text-shadow: 3px 3px black;
+}
 
-  #search-results button {
-    margin-bottom: 1rem;
-  }
+header p {
+  background-color: rgba(0, 0, 0, 0.25);
+  display: inline-block;
+}
+/* end header styles */
 
-  h2 {
-    color: gold;
-    margin-bottom: 1rem;
-  }
+/* search result buttons */
+.brewery-results,
+.events-results {
+  border-radius: 10px;
+  color: black;
+  padding: 5px;
+  margin: 5px;
+  border: black 1px solid;
+  background-color: blanchedalmond;
+  width: 100%;
+}
 
-  .results {
-    background-color: black;
-    border: gold solid;
-    color: white;
-    border-radius: 15px;
-    width: 30rem;
-    font-size: 1rem;
-    height: 3rem;
-    justify-content: space-between;
-    text-shadow: 0 0 10px gold;
-  }
+.brewery-results:hover,
+.events-results:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.395);
+}
+/* end search result buttons styles */
 
-  #brews-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-  #result-ink span {
-    color: gold;
-  }
+/* search and form div */
+.btn-data {
+  border-radius: 10px;
+  color: black;
+  padding: 5px;
+  margin-top: 5px;
+  border: black 1px solid;
+  width: 100%;
+}
+
+.btn-data:hover {
+  color: white;
+  background-color: rgba(128, 128, 128, 0.529);
+}
+
+.recent-search-text {
+  font-size: 30px;
+  text-align: center;
+  margin: 5px;
+}
+
+#clear-search {
+  width: 100%;
+  text-align: center;
+}
+.form {
+  width: 100%;
+  text-align: center;
+}
+
+#search-bar {
+  width: 100%;
+}
+
+#submit-btn {
+  width: 100%;
+}
+/* end search and form div styles */
+
+/* displaying brewery and events datastyles */
+.breweries h2,
+.events h2 {
+  font-size: 35px;
+}
+
+.city-name {
+  font-size: 35px;
+  color: black;
+}
+
+.name {
+  font-size: 22px;
+}
+/* end data styles */
