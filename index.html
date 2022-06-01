@@ -1,107 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pregame</title>
     <script src="https://cdn.tailwindcss.com?plugins=typography,forms"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rock+Salt&family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-
-    <!-- may not need this -->
-    <!-- <script>
-       tailwind.config = {
-           theme: {
-               extend: {
-                   colors: {: ,
-                   }
-               }
-           }
-       }
-   </script> -->
-</head>
-
-<body class="w-full h-screen bg-yellow-500 p-12">
-    <!-- section contains the name of the application and the icon/profile (optional) -->
-    <header class="header border-b-4" id="header">
-        <h1 class="text-black-500 text-6xl font-bold font-sans italic drop-shadow-lg">
-            pregame
-        </h1>
-        <br />
-        <br />
-        <p class="text-2xl prose">
-            Discover new events and breweries while traveling in any major U.S. City. <br /> Enter a city below and click the submit button to start exploring!
-        </p>
-        <br class/>
+  <body class="w-full h-screen bg-yellow-500">
+    <!-- section contains the name of the application/description/header image -->
+    <header class="header p-12" id="header">
+      <h1 class="text-yellow-500">pregame</h1>
+      <br />
+      <br />
+      <p class="text-white text-2xl text-prose">
+        Discover new events and breweries while traveling in any major U.S.
+        City. <br />
+        Enter a city below and click the submit button to start exploring!
+      </p>
+      <br />
     </header>
 
     <!-- form and button -->
-
-    <div class="grid grid-cols-5 grid-rows-1 p-3 m-3 main">
-
-        <div class="search-area">
-            <form id="form">
-                <div id="form-error"></div>
-                <input name="city" id="search-bar" placeholder="Enter a major U.S. city" type="text" />
-                <button class="hover:bg-amber-100 my-5 px-5 py-2 inline-block bg-black text-white hover:text-black font-medium rounded shadow" id="submit-btn">
+    <div
+      class="grid sm:grid-cols-1 md:grid-cols-5 grid-rows-1 bg-yellow-500 p-6"
+    >
+      <div class="search-area col-span-1 mt-5">
+        <form class="form" id="form">
+          <div id="form-error"></div>
+          <input
+            name="city"
+            id="search-bar"
+            placeholder="Enter a major U.S. city"
+            type="text"
+          />
+          <br />
+          <button
+            class="hover:bg-amber-100 my-5 px-5 py-2 bg-black text-white hover:text-black font-medium rounded shadow justify-center"
+            id="submit-btn"
+          >
             Submit
           </button>
-            </form>
+        </form>
 
-            <div id="fetch-error"></div>
+        <div id="fetch-error"></div>
 
-            <div>
-                <h2 class="font-bold italic">Recent City Searches</h2>
-                <br />
-                <div class="" id="recent-search"></div>
+        <!-- recent search history and clear search button -->
+        <div>
+          <h2 class="recent-search-text font-bold">Recent City Searches</h2>
+          <div id="recent-search"></div>
 
-                <button class="hover:bg-amber-100 my-5 px-5 py-2 inline-block bg-white text-black font-medium rounded shadow" id="clear-search" type="submit">
-          Clear History
-        </button>
-            </div>
+          <button
+            class="hover:bg-amber-100 my-5 px-3 py-2 bg-white text-black font-medium rounded shadow justify-center"
+            id="clear-search"
+            type="submit"
+          >
+            Clear History
+          </button>
         </div>
+      </div>
 
-
-        <!-- main content (for displaying results) -->
-
-        <div class="col-span-2 p-3 m-3">
-
-            <div class="breweries">
-                <div id="brews-list">
-                    <h2 class="font-bold italic text-2xl prose">Showing Breweries in:</h2>
-                    <br />
-                    <span class="font-bold italic" id="location-brew"></span>
-                    <br />
-                    <br />
-                    <div class="grid grid-cols-5 gap-4" id="brew-list-btns"></div>
-                </div>
-            </div>
+      <!-- main content (for displaying results) -->
+      <!-- breweries -->
+      <div class="sm:col-span-1 md:col-span-2 p-3 m-3 ml-5">
+        <div class="breweries mt-5">
+          <div id="brews-list">
+            <h2 class="font-bold text-2xl prose">
+              Showing Breweries in:
+              <span class="font-bold" id="location-brew"></span>
+            </h2>
+            <br />
+            <br />
+            <div class="grid grid-cols-1 gap-4" id="brew-list-btns"></div>
+          </div>
         </div>
+      </div>
 
-
-        <div class="col-span-2 p-3 m-3">
-            <div class="events">
-                <div id="beats-list">
-                    <h2 class="font-bold italic text-2xl prose">Showing Entertainment in:</h2>
-                    <br />
-                    <span class="font-bold italic" id="location-beats"></span>
-                    <br />
-                    <br />
-                    <div class="grid grid-cols-5 gap-4" id="beats-list-btns"></div>
-                </div>
-            </div>
-
+      <!-- events -->
+      <div class="sm:col-span-1 md:col-span-2 p-3 m-3">
+        <div class="events mt-5">
+          <div id="beats-list">
+            <h2 class="font-bold text-2xl prose">
+              Showing Entertainment in:
+              <span class="font-bold" id="location-beats"></span>
+            </h2>
+            <br />
+            <br />
+            <div class="grid grid-cols-1 gap-4" id="beats-list-btns"></div>
+          </div>
         </div>
-
-
-
-
-
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="./assets/js/script.js"></script>
-</body>
-
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
