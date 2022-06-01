@@ -1,79 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pregame</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography,forms"></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
-  </head>
 
-  <body>
+
+    <!-- may not need this -->
+    <!-- <script>
+       tailwind.config = {
+           theme: {
+               extend: {
+                   colors: {: ,
+                   }
+               }
+           }
+       }
+   </script> -->
+</head>
+
+<body class="w-full h-screen bg-yellow-500 p-12">
     <!-- section contains the name of the application and the icon/profile (optional) -->
-    <header class="header" id="header">
-      <h1>Pregame</h1>
+    <header class="header border-b-4" id="header">
+        <h1 class="text-black-500 text-6xl font-bold font-sans italic drop-shadow-lg">
+            pregame
+        </h1>
+        <br />
+        <br />
+        <p class="text-2xl prose">
+            Discover new events and breweries while traveling in any major U.S. City. <br /> Enter a city below and click the submit button to start exploring!
+        </p>
+        <br class/>
     </header>
 
-    <!-- section for changing between breweries or events and searching the area -->
-    <nav class="search-sec" id="search-sec">
-      <div id="nav-sec-1">
-        <button class="pill hidden" id="brews-btn">Brews</button>
-        <button class="pill hidden" id="beats-btn">Beats</button>
-      </div>
+    <!-- form and button -->
 
-      <div id="nav-sec-2">
-        <form id="form">
-          <div id="form-error"></div>
-          <input
-            name="city"
-            id="search-bar"
-            placeholder="Enter a location"
-            type="text"
-          />
-          <button class="pill" id="submit-btn">
-            <i class="fa-solid fa-magnifying-glass"></i>
+    <div class="grid grid-cols-5 grid-rows-1 p-3 m-3 main">
+
+        <div class="search-area">
+            <form id="form">
+                <div id="form-error"></div>
+                <input name="city" id="search-bar" placeholder="Enter a major U.S. city" type="text" />
+                <button class="hover:bg-amber-100 my-5 px-5 py-2 inline-block bg-black text-white hover:text-black font-medium rounded shadow" id="submit-btn">
+            Submit
           </button>
-        </form>
-        <div id="fetch-error"></div>
-      </div>
-      <div>
-        <h2>Recent Search</h2>
-        <div id="recent-search"></div>
-        <button id="clear-search" type="submit">Clear History</button>
-      </div>
-    </nav>
+            </form>
 
-    <!-- this section is for the map if we do it -->
-    <!-- <map name="">
+            <div id="fetch-error"></div>
+
+            <div>
+                <h2 class="font-bold italic">Recent City Searches</h2>
+                <br />
+                <div class="" id="recent-search"></div>
+
+                <button class="hover:bg-amber-100 my-5 px-5 py-2 inline-block bg-white text-black font-medium rounded shadow" id="clear-search" type="submit">
+          Clear History
+        </button>
+            </div>
+        </div>
 
 
-    </map> -->
+        <!-- main content (for displaying results) -->
 
-    <!-- main content (for displaying results) -->
+        <div class="col-span-2 p-3 m-3">
 
-    <main id="search-results">
-      <div id="brews-list">
-        <h2>Showing Breweries in:</h2>
-        <span id="location-brew"></span>
-        <div id="brew-list-btns"></div>
+            <div class="breweries">
+                <div id="brews-list">
+                    <h2 class="font-bold italic text-2xl prose">Showing Breweries in:</h2>
+                    <br />
+                    <span class="font-bold italic" id="location-brew"></span>
+                    <br />
+                    <br />
+                    <div class="grid grid-cols-5 gap-4" id="brew-list-btns"></div>
+                </div>
+            </div>
+        </div>
 
-        <!-- Need to remove hardcoded buttons -->
-        <!-- <a class="results" id="result-ink" href="https://gizmobrewworks.com/">
-          <button id="result">
-            EXAMPLE BUTTON
-            <span>(4.7mi)</span>
-          </button>
-        </a> -->
-      </div>
 
-      <div id="beats-list" class="hidden">
-        <h2>Showing Entertainment in:</h2>
-        <span id="location-beats"></span>
-        <div id="beats-list-btns"></div>
-      </div>
-    </main>
+        <div class="col-span-2 p-3 m-3">
+            <div class="events">
+                <div id="beats-list">
+                    <h2 class="font-bold italic text-2xl prose">Showing Entertainment in:</h2>
+                    <br />
+                    <span class="font-bold italic" id="location-beats"></span>
+                    <br />
+                    <br />
+                    <div class="grid grid-cols-5 gap-4" id="beats-list-btns"></div>
+                </div>
+            </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
+        </div>
+
+
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
