@@ -10,7 +10,7 @@ When you arrive at the Pregame homepage, enter a major US city in the search bar
 
 ## :rocket: Launch
 
-- [Click to visit Pregame](https://github.com/gilinamcbride/team7-project1-APIs)
+- [Click to visit Pregame](https://gilinamcbride.github.io/team7-project1-APIs/)
 
 ## Tech
 
