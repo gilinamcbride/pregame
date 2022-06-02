@@ -33,7 +33,7 @@
     <div
       class="grid sm:grid-cols-1 md:grid-cols-5 grid-rows-1 bg-yellow-500 p-6"
     >
-      <div class="search-area col-span-1 mt-5">
+      <div class="search-area col-span-1 mt-5 h-screen">
         <form class="form" id="form">
           <div id="form-error"></div>
           <input
@@ -55,11 +55,11 @@
 
         <!-- recent search history and clear search button -->
         <div>
-          <h2 class="recent-search-text font-bold">Recent City Searches</h2>
+          <h2 class="recent-search-text font-bold">Recent City Searches:</h2>
           <div id="recent-search"></div>
 
           <button
-            class="hover:bg-amber-100 my-5 px-3 py-2 bg-white text-black font-medium rounded shadow justify-center"
+            class="hover:bg-amber-100 my-5 px-3 py-2 bg-white text-black font-medium rounded shadow rounded-xl justify-center"
             id="clear-search"
             type="submit"
           >
