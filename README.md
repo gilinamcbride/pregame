@@ -2,11 +2,19 @@
 
 Pregame is an application that helps you search for breweries, concerts, and other events in any major U.S. city. Discover new events and brews while traveling, or even in your home town.
 
+<<<<<<< HEAD
 ![pregame](./assets/images/pregame.png)
 
 ## :notes: How to use Pregame :beers:
 
 When you arrive at the Pregame homepage, enter a major US city in the search bar and a list of live events and breweries will display on the page.
+=======
+![pregame application](./assets/images/pregame.png)
+
+## :notes: How to use Pregame :beers:
+
+When you arrive at the Pregame homepage, enter a major US city in the search bar and a list of live events and breweries will display on the page. Your recent searches will be stored on the page as well.
+>>>>>>> main
 
 ## :rocket: Launch
 
@@ -51,11 +59,19 @@ Moving forward future iterations of the application would include:
 - A map of the searched city that had pins of the brewery locations and venue locations searched
 - The search would include more than just major US cities - it would also render breweries and events in smaller towns and global cities
 - More search options including wineries and local bars for those who don't enjoy beer
+<<<<<<< HEAD
 - Search filters including type of event or type/brand of beer
 
 **_Presentation_**
 
 ![pregame](./assets/images/presentation.png)
+=======
+- Specific search filtes or dropdown menus, including searching by type of event, or type/brand of beer
+
+**_Presentation_**
+
+![presentation](./assets/images/presentation.png)
+>>>>>>> main
 
 [Link to presentation](https://docs.google.com/presentation/d/e/2PACX-1vSy3JX3KlryuFhdNjNQQ-31SngdBjCM9PU4QVDaRevjvZEbuhgkq1NMT9P8pITl3_1qI5_4CVYXY8J7/pub?start=false&loop=false&delayms=3000)
 
