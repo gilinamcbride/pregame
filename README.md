@@ -1,16 +1,16 @@
 # Pregame
 
-Pregame is an application that helps you search for concerts, festivals, sporting events, musicals, and breweries in any major city in the U.S. Discover new events and brews while traveling, or even in your home town.
+Pregame is an application that helps you search for breweries, concerts, and other events in any major U.S. city. Discover new events and brews while traveling, or even in your home town.
 
-![*screenshot*](https://www.google.com/url?sa=i&url=https://www.piqsels.com/en/public-domain-photo-jmwnz&psig=AOvVaw0XWkINIraKCBOsbrTKpY8j&ust=1653595071412000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPC5iPG3-_cCFQAAAAAdAAAAABAD)
+![pregame](./assets/images/pregame.png)
 
 ## :notes: How to use Pregame :beers:
 
-When you arrive at the Pregame homepage, you can simply search for a major US city you want to travel to in the search bar and a list of live events and breweries will display on the page.
+When you arrive at the Pregame homepage, enter a major US city in the search bar and a list of live events and breweries will display on the page.
 
 ## :rocket: Launch
 
-- [Click to visit Pregame](https://github.com/gilinamcbride/team7-project1-APIs)
+- [Click to visit Pregame](https://gilinamcbride.github.io/team7-project1-APIs/)
 
 ## Tech
 
@@ -51,11 +51,13 @@ Moving forward future iterations of the application would include:
 - A map of the searched city that had pins of the brewery locations and venue locations searched
 - The search would include more than just major US cities - it would also render breweries and events in smaller towns and global cities
 - More search options including wineries and local bars for those who don't enjoy beer
-- More specified search options including searching by type of event you want to attend, or type/brand of beer
+- Specific search filtes or dropdown menus, including searching by type of event, or type/brand of beer
 
 **_Presentation_**
 
--ADD PRESENTATION SCREENSHOT HERE-
+![presentation](./assets/images/presentation.png)
+
+[Link to presentation](https://docs.google.com/presentation/d/e/2PACX-1vSy3JX3KlryuFhdNjNQQ-31SngdBjCM9PU4QVDaRevjvZEbuhgkq1NMT9P8pITl3_1qI5_4CVYXY8J7/pub?start=false&loop=false&delayms=3000)
 
 ## Grading Requirements:
 
@@ -87,3 +89,5 @@ Thank you to everyone on the team for your contributions!
 - [Donnie](https://github.com/Atlas075)
 - [Drew](https://github.com/DrewMcKinney23)
 - [Caren](https://github.com/cammeer)
+
+
